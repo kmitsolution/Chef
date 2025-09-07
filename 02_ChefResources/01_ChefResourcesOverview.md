@@ -33,7 +33,7 @@ end
 ---
 
 ### 2. **`service`**
-
+<a href=https://docs.chef.io/resources/service/ > Service Resource </a>
 Manages a system service.
 
 ```ruby
