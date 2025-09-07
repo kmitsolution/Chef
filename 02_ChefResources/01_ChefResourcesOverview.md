@@ -1,7 +1,3 @@
-**overview of Chef resources**
-
----
-
 ##  **Chef Resources Overview**
 
 ###  What is a Chef Resource?
@@ -41,7 +37,7 @@ end
 Manages a system service.
 
 ```ruby
-service 'nginx' do
+service 'apache2' do
   action [:enable, :start]
 end
 ```
