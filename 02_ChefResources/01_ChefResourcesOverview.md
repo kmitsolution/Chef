@@ -45,6 +45,7 @@ end
 ---
 
 ### 3. **`file`**
+<a href="https://docs.chef.io/resources/file/"> file Resource </a>
 
 Manages the contents of a file.
 
@@ -77,7 +78,7 @@ end
 ---
 
 ### 5. **`directory`**
-
+<a href="https://docs.chef.io/resources/directory/" > directory </a>
 Manages directories.
 
 ```ruby
@@ -93,7 +94,7 @@ end
 ---
 
 ### 6. **`user`**
-
+<a href="https://docs.chef.io/resources/user/" > User Resource</a>
 Creates or manages user accounts.
 
 ```ruby
@@ -108,7 +109,7 @@ end
 ---
 
 ### 7. **`group`**
-
+<a href="https://docs.chef.io/resources/group"> Group </a>
 Creates or manages groups.
 
 ```ruby
@@ -203,4 +204,4 @@ You can find the full list of Chef built-in resources in the official docs:
 
 ---
 
-Would you like a printable or downloadable version of this overview (PDF or Markdown)?
+
