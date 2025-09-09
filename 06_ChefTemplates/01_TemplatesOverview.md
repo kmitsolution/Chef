@@ -8,7 +8,7 @@ Templates in Chef are **files written in Embedded Ruby (ERB)** that allow you to
 
 1. **Stored in a Cookbook**: Templates are kept in the `templates/` directory of a Chef cookbook.
 
-   * Example: `cookbooks/my_cookbook/templates/default/my_template.conf.erb`
+   * Example: `cookbooks/my_cookbook/templates/my_template.conf.erb`
 
 2. **Rendered via the `template` Resource**: The `template` resource in a recipe tells Chef to process the ERB file and write it to a destination on the node.
 
@@ -17,7 +17,7 @@ Templates in Chef are **files written in Embedded Ruby (ERB)** that allow you to
      source 'my_template.conf.erb'
      variables({
        setting1: 'value1',
-       setting2: node['myapp']['setting2']
+     
      })
      owner 'root'
      group 'root'
@@ -29,7 +29,7 @@ Templates in Chef are **files written in Embedded Ruby (ERB)** that allow you to
 
    ```erb
    setting1 = <%= @setting1 %>
-   setting2 = <%= @setting2 %>
+  
    ```
 
 ---
@@ -37,14 +37,12 @@ Templates in Chef are **files written in Embedded Ruby (ERB)** that allow you to
 ###  Template File Naming
 
 * Files are named with the `.erb` extension.
-* You can have platform-specific templates by using file specificity:
+
 
   ```
   templates/
-  ├── default/
-  │   └── config.conf.erb
-  ├── ubuntu-20.04/
-  │   └── config.conf.erb
+  ├── ─ config.conf.erb
+
   ```
 
 Chef will pick the most specific file based on the node's platform and version.
@@ -62,8 +60,6 @@ Chef will pick the most specific file based on the node's platform and version.
 
 ###  Security Tip
 
-Avoid hardcoding sensitive data in templates. Use **Chef Vault** or **encrypted data bags** and access secrets securely.
-
 ---
 
 ### Example ERB Template
@@ -73,7 +69,6 @@ Avoid hardcoding sensitive data in templates. Use **Chef Vault** or **encrypted 
 ```erb
 # Configuration file for MyApp
 port = <%= @port %>
-environment = <%= node.chef_environment %>
 log_level = <%= @log_level %>
 ```
 
@@ -83,8 +78,8 @@ log_level = <%= @log_level %>
 template '/etc/myapp/myapp.conf' do
   source 'my_template.conf.erb'
   variables({
-    port: node['myapp']['port'],
-    log_level: node['myapp']['log_level']
+    port: '80'
+    log_level: 'Beginner'
   })
 end
 ```
