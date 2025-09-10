@@ -43,8 +43,8 @@ brew install --cask chef-workstation
 #### 👉 **On Ubuntu/Debian:**
 
 ```bash
- wget https://chefworkstation0987.s3.us-east-2.amazonaws.com/chef-workstation_0.4.2-1_amd64.deb
- dpkg -i chef-workstation_0.4.2-1_amd64.deb
+ wget https://packages.chef.io/files/stable/chef-workstation/25.5.1084/ubuntu/22.04/chef-workstation_25.5.1084-1_amd64.deb
+ dpkg -i chef-workstation_25.5.1084-1_amd64.deb
  chef -v
 
 ```
