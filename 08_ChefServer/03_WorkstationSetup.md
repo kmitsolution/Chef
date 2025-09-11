@@ -1,6 +1,3 @@
-Great! Let’s continue with the **Chef Workstation setup** and then walk through how to **bootstrap a node** using your newly installed Chef Server.
-
----
 
 ## 🧰 **Step-by-Step: Chef Workstation Setup and Node Bootstrapping**
 
@@ -76,17 +73,16 @@ You’ll need:
 * The **IP or hostname** of the node
 * SSH access to the node (usually via `ubuntu` or `root` user)
 
-### 🔧 Install Chef Client on Node and Connect It:
+### 🔧 Install Chef Client on Node and Connect It:(should have ssh connection with remote server)
 
 ```bash
-knife bootstrap 192.168.1.50 -x ubuntu -i ~/.ssh/id_rsa --sudo \
---node-name webserver1 \
---run-list 'recipe[apache]'
+knife cookbook upload workstation
+knife bootstrap 172.31.36.70 -x root -i /root/.ssh/id_rsa --sudo --node-name webserver1 --run-list 'recipe[workstation::apache]' --node-ssl-verify-mode none
 ```
 
 Explanation:
 
-* `192.168.1.50` = IP of the node
+* `172.31.36.70` = IP of the node
 * `-x ubuntu` = SSH username
 * `-i` = your SSH private key
 * `--node-name` = the node name in Chef
@@ -130,4 +126,4 @@ At this point:
 
 ---
 
-Would you like a sample **`apache` or `nginx` cookbook**, or help with **using roles/environments** for managing multiple servers?
+
