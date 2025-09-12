@@ -86,7 +86,7 @@ sudo chef-manage-ctl reconfigure --accept-license
 Create an admin user (you’ll use this with Knife):
 
 ```bash
-sudo chef-server-ctl user-create myuser "My User" myuser@example.com 'Password@1234567' --filename myuser.pem
+chef-server-ctl user-create myuser "myuser" "My User" "myuser@example.com" 'Password@1234567' --filename myuser.pem
 ```
 
 * `myuser.pem` is your **private key** — store it securely.
